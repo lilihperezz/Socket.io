@@ -2,18 +2,17 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>CAMARA</title>
-<!-- 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+	<title>emitir video</title>
   	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 	
-	<p><a href="emitir.html">emitir camara web </a></p>
-	<p><a href="visualizar.html">ver transmision!</a></p>
-
+	<video src="" id="video" style="width: 600px; height: 320px;" autoplay="true"></video>
+	<canvas style="display: none;" id="preview"></canvas>
+	<div id="logger"></div>
 	<script   src="http://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="js/emitir.js"></script>
 </body>
 </html>
