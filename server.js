@@ -1,24 +1,33 @@
-//var express para llamar librería express
 var express = require('express');
-// para que se ejecute la librería
-var app = express();
-//creamos servidor para requerir librería htpp de node
-var server = require('http').createServer(app);
-//creamos var io tendrá todas las funcionalidades de los sockets
-var io = require('socket.io')(server);
-//Para usar la parte publica de ficheros estáticos
- app.use(express.static('public'));
-//app donde está express cuando reciba un get en la ruta raiz active la sgt acción
- //mande un estatus ok y que envie msj.
-app.get('/',function(req, res){
-	res.status(200).send("Hello World :)");
-});
-// escuchar mensaje del navegador o servidor ,msj viene del navegador(html)
-io.on('connection',function(socket){
- console.log("Alguien se ha conectado con sockets");
+var app =  express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
+//configurar archivos públicos-estáticos(css-js-img)
+
+app.use('/static',express.static(__dirname + '/static'));
+
+//configurar pug - setear variables views express
+app.set('views',__dirname + '/views');
+app.set('view engine', 'pug')
+
+//socket.io escucha los metodos implementados desde el lado del cliente y del server
+var contador = 0;
+io.on('connection', function(socket){
+	contador++;
+	io.sockets.emit('welcome', contador);
+//socket en escucha - var movimientos (que cliente pasa al server y el server se encarga de emitir a todos los clientes)
+	socket.on('draw' ,function(_movimientos){ 
+		io.sockets.emit('update', _movimientos);
+	})
+})
+
+
+app.get('/', function(req,res){
+	res.render('home',{message: 'Draw your ideas here'});
 });
 
-//probando 
-server.listen(8080,function(){
-	console.log("servidor encendido en http://localhost:8080");
-})
+//para iniciar el servidor
+http.listen(3000,function(){
+	console.log('El server está escuchando el puerto :3000');
+});
