@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Friend Chat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="banner ">
+        <h1>Friend Chat</h1>
+        <span id="status"></span>
+      </div>
+      <div id="historyMsg"></div>
+      <div class="controls" >
+        <div class="items">
+          <input id="colorStyle" type="color" placeHolder='#000' title="font color" />
+          <input id="emoji" type="button" value="emoji" title="emoji" />
+          <label id="image"  for="sendImage" class="imageLable">
+            <input type="button" value="image"/>
+            <input id="sendImage" type="file" value="image"/>
+          </label>
+          <input id="clearBtn" type="button" value="clear" title="clear screen" />
+        </div>
+        <textarea id="messageInput" placeHolder="enter to send"></textarea>
+        <input id="sendBtn" type="button" value="SEND">
+        <div id="emojiWrapper">
+        </div>
+        <video src="" id="video" autoplay="true"></video>
+        <canvas style="display: none;" id="preview"></canvas>
+        <div id="pizarra"></div>
+        <img id="play">
+        <div id="logger"></div>  
+      </div>
+    </div>
+      <div id="loginWrapper">
+        <p id="info">Conectando con el Servidor</p>
+        <div id="nickWrapper">
+          <input type="text" placeHolder="nickname" id="nicknameInput" />
+          <input type="button" value="OK" id="loginBtn" />
+        </div>
+      </div> 
+  <script src="/socket.io/socket.io.js"></script>
+  <script   src="http://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="scripts/emitir.js"></script>
+  <script type="text/javascript" src="scripts/ver.js"></script>
+  <script type="text/javascript" src="static/js/draw.js"></script>
+  <script type="text/javascript" src="scripts/app.js"></script>
+  </body>
+</html>
