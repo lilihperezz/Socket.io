@@ -4,10 +4,10 @@ README
 que contruiremos en Node.js con la librería Socket.io .Websockets es una tecnología que permite una comunicación bidireccional
 entre cliente y servidor sobre un único socket.
 
-Ver la demostración en vivo:  http://FriendsChat.herokuapp.com/
+Ver la demostración en vivo:  http://friendschatsocket.herokuapp.com/
 
 Cómo ejecutarlo
 1.Descarga el código 
 2.Ejecuta npm install desde la línea de comandos.
 3.Ejecuta Node server 
-4.Abrir el navegador y visitar localhost:8080
+4.Abrir el navegador y visitar localhost:3000
