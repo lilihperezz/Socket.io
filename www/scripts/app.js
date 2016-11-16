@@ -32,7 +32,7 @@ miChat.prototype = {
             }
         });
         this.socket.on('system', function(nickName, userCount, type) {
-            var msg = nickName + (type == 'login' ? ' joined' : ' left');
+            var msg = nickName + (type == 'login' ? ' conectado' : ' desconectado');
             that._displayNewMsg('system ', msg, '#3d5afe');
             document.getElementById('status').textContent = userCount + (userCount > 1 ? ' usuarios' : ' usuarios') + ' en línea';
         });
