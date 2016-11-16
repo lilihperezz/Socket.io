@@ -33,7 +33,7 @@ miChat.prototype = {
         });
         this.socket.on('system', function(nickName, userCount, type) {
             var msg = nickName + (type == 'login' ? ' joined' : ' left');
-            that._displayNewMsg('system ', msg, 'red');
+            that._displayNewMsg('system ', msg, '#3d5afe');
             document.getElementById('status').textContent = userCount + (userCount > 1 ? ' usuarios' : ' usuarios') + ' en línea';
         });
         this.socket.on('newMsg', function(user, msg, color) {
@@ -44,7 +44,7 @@ miChat.prototype = {
         });
 
         loginBtn.classList.add("waves-effect");
-            loginBtn.classList.add("waves-light", "btn-large", "white", "black-text");
+            loginBtn.classList.add("waves-light", "btn-large", "white", "white-text");
 
         document.getElementById('loginBtn').addEventListener('click', function() {
             var nickName = document.getElementById('nicknameInput').value;
@@ -116,7 +116,7 @@ miChat.prototype = {
                     reader = new FileReader(),
                     color = document.getElementById('colorStyle').value;
                 if (!reader) {
-                    that._displayNewMsg('system', '!your browser doesn\'t support fileReader', 'red');
+                    that._displayNewMsg('system', '!your browser doesn\'t support fileReader', '#3d5afe');
                     this.value = '';
                     return;
                 };

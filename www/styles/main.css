@@ -1,22 +1,35 @@
 html, body {
     margin: 0;
     background-color: #efefef;
-    font-family: sans-serif;
+    font-family: Verdana;
+}
+h1{
+    color: white;
+    margin:0px !important;
+}
+.logo{
+    background: url("../content/logochat.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 20vh;
+    margin-left: 98vh;
 }
 .wrapper {
     width: 100%;
-    height: 662px;
+    height: 630px;
     padding: 0 5%;
     margin: 0 auto;
-    background-color: #b2ff59; 
+    background-image: url(../content/fondo.jpg); 
+    background-size: cover;
 }
-#loginWrapper {
+
+#loginWrapper { color:#3d5afe ;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: url("../content/bg-login.jpg");
+    background: url("../content/fondo2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     position: center;
@@ -47,6 +60,7 @@ html, body {
     overflow: auto;
     padding: 2%;
     width: 60%;
+    border-radius: 2vh;
 }
 #historyMsg img {
     max-width: 99%;
@@ -57,6 +71,7 @@ html, body {
 }
 .items {
     height: 30px;
+    padding-bottom: 7vh;
 }
 #colorStyle {
     width: 50px;
@@ -82,11 +97,12 @@ html, body {
     max-height: 90px;
     float:left;
     background-color: white;
+    border-radius: 2vh;
 }
 #sendBtn {
     width: 10%;
     height: 89px;
-    background-color: #76ff03;
+    background-color: #3d5afe;
     color: white;
 }
 #emojiWrapper {
@@ -111,21 +127,28 @@ html, body {
 }
 
 #status{
-    margin-left: 2%;
+    background-color: white;
+    border-radius: 0.3vh;
 }
 
 #video {
     height: 250%;
     position: absolute;
     right: 5%;
-    top: -200px;
+    top: -18vh;
+    border-radius: 2vh;
 }
 
 #pizarra {
-    height: 250%;
-    width: 25%;
+    height: 250PX;
+    width: 332px;
     position: absolute;
     right: 5%;
-    top: -470px;
+    top: -64vh;
+    border-radius: 2vh;
     background-color: white;
+}
+#info{
+    padding: 2vh;
+    background: rgba(0, 0, 0, 0.47);
 }

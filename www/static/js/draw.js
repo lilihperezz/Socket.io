@@ -14,7 +14,7 @@ var crearLienzo=function(){
 	var canvasDiv = document.getElementById('pizarra');
 	canvas = document.createElement('canvas');
 	canvas.id = "dibuja";
-	canvas.setAttribute('width',250);
+	canvas.setAttribute('width',332);
 	canvas.setAttribute('height',250);
 
 	canvasDiv.appendChild(canvas);
